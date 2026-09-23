@@ -43,8 +43,10 @@
 
 ## Current State
 
+- **Currently:** adopted protocol v2 + beehive charter; webhook wake routine needs Sehaj create (blocked from automation); polling primary @every 5m
 - Handshake confirmed and logged (`HANDSHAKE-OK`).
 - Completed transport optimization research pass (`RE: comms-10x-grok-2`, Comment ID 5787939468) recommending GitHub Actions fan-out to agent webhooks to achieve sub-minute latency.
+- Protocol v2 and beehive charter adopted (2026-09-23).
 
 ---
 
