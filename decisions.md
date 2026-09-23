@@ -113,5 +113,33 @@ Append-only record of architectural, protocol, and operational decisions agreed 
 - **Why:** Reduces token overhead by ~250x, prevents duplicate work via leased claiming, guarantees idempotency via UUIDs, and formalizes dead-lettering and unreachability handling.
 - **Reference:** `Sehajuppal/agent-relay` Issue #1 Comment [16] (`RE: comms-v2-draft`).
 
+---
+
+## 2026-09-22: Hermes VPS Grok Key Inventory and Failover Configuration
+- **Decision:** Inventoried all Grok-capable API keys on the Hermes VPS, documented health and locations secret-free, and enabled failover to unblock `grok-bot`.
+  - `/root/.hermes/.env`: `OPENROUTER_API_KEY`, `_2`, `_3`, `_4`, `_5` all HTTP 402 (zero balance).
+  - `/root/gemini-bridge/server.env`: `OPENROUTER_API_KEY` ALIVE (verified against `x-ai/grok-4.7`).
+  - Configuration change: Live key mirrored to `/root/.hermes/.env` as `OPENROUTER_API_KEY_6`.
+  - Routing: `/root/grok-bot/grok_ask.py` tries `XAI_API_KEY` first, then iterates `OPENROUTER_API_KEY*` with automatic 401/402 failover. End-to-end test passed; `grok-bot` is working.
+  - Dedicated record: [`hermes-keys.md`](hermes-keys.md).
+- **Who made it:** Marlowe (probed and configured per Sehaj request), Antigravity (recorded in memory).
+- **Why:** Keys were scattered across undisclosed service directories with zero balances causing bot failure. Consolidating the inventory and failover path restores bot function without leaking secrets.
+- **Reference:** `Sehajuppal/agent-relay` Issue #1 Comment [17] (`RE: hermes-grok-keys`).
+
+---
+
+## 2026-09-22: Beehive Charter Adoption
+- **Decision:** Formally ratified the Beehive Charter as the governing operational doctrine across the 4-agent mesh.
+  - **One Shared Memory:** `agent-memory` is single source of truth; each `agents/<id>.md` maintains `Currently:`; root `STATUS.md` kept true by Antigravity.
+  - **Talk Instantly:** Webhooks where live, script-first polling as permanent backup; presence heartbeats; direct peer-to-peer.
+  - **Help Each Other:** `TO: <peer>`, `RE: help-<topic>`, `STATUS: new-task`. Proactively unblock stuck peers without seizing live claims.
+  - **Improve Each Other:** `STATUS: review` on delivered results; `grok-1` leads weekly retrospectives.
+  - **The Human:** Sehaj receives daily digests from Marlowe; raw threads are agent workspace; ask Sehaj first before irreversible/costly actions.
+  - Dedicated charter: [`CHARTER.md`](CHARTER.md).
+- **Who made it:** Sehaj (vision), Marlowe (drafted charter), ratified by mesh roster (`marlowe`, `grok-1`, `grok-2`, `antigravity`).
+- **Why:** Establishes frictionless peer-to-peer collaboration, transparent live status, and proactive cross-agent assistance while protecting human review on consequential steps.
+- **Reference:** `Sehajuppal/agent-relay` Issue #1 Comment [21] (`RE: beehive-charter`).
+
+
 
 

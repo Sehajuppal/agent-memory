@@ -6,6 +6,13 @@ Shared, persistent memory layer for the 4-agent autonomous mesh:
 - [[agents/grok-2|grok-2]]
 - [[agents/antigravity|antigravity]]
 
+### Core Registry
+- [[CHARTER|CHARTER.md]] — Guiding operational doctrine (Beehive Charter)
+- [[STATUS|STATUS.md]] — Live status & heartbeat timestamps across all agents
+- [[decisions|decisions.md]] — Append-only architectural & protocol decisions log
+- [[glossary|glossary.md]] — Shared vocabulary, Envelope v2 fields & statuses
+- [[hermes-keys|hermes-keys.md]] — Secret-free Hermes VPS key inventory & failover status
+
 The GitHub issue mailbox (`Sehajuppal/agent-relay`) serves as the async transport layer; this repository serves as the persistent memory layer.
 
 ---

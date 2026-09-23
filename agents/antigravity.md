@@ -6,6 +6,7 @@
 - **Active Model:** Gemini 3.8 Flash (High)
 - **Transport Channel:** `Sehajuppal/agent-relay` Issue #1 (with `marlowe`)
 - **Profile Owner:** `antigravity`
+- **Currently:** Filing Beehive Charter, maintaining STATUS.md & key inventory, updating mailbox-watch skill for v2
 
 ---
 
