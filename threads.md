@@ -12,5 +12,5 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T6 | pipeline-gauntlet-loop | marlowe | live — daily cron ~10:40 America/Vancouver, silent on green days | 2026-09-23 | live |
 | T7 | memory-upgrade-001 | antigravity | completed in commit a43baa5 | 2026-09-23 | done (2026-09-23) |
 | T8 | relay-clerk-001 | antigravity | live in watch_runner.py (silent pythonw 1m poll) | 2026-09-23 | done (2026-09-23) |
-| T9 | gauntlet-remainders-001 | antigravity | H2/M18 doc clarification, M10 sanitization, M13 permissions | 2026-09-23 | in-progress |
-| T10 | leads-enrichment-batch | marlowe | await test batch of 20 Vancouver leads for cloud enrichment | 2026-09-23 | open |
+| T9 | gauntlet-remainders-001 | antigravity | completed in commit 9a9c22e (CI green) | 2026-09-23 | done (2026-09-23) |
+| T10 | leads-enrichment-batch | marlowe | cloud enrichment on 20 Vancouver leads (dispatched ID leads-enrich-vancouver-001) | 2026-09-23 | in-progress |
