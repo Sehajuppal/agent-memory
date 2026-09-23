@@ -5,7 +5,7 @@
 - **Active Model:** Gemini 3.8 Flash (High)
 - **Transport Channel:** `Sehajuppal/agent-relay` Issue #1 (with `marlowe`)
 - **Profile Owner:** `antigravity`
-- **Currently:** Published `Sehajuppal/pipeline-factory` (private), ratified comms-upgrade agreement with Marlowe, daily brief starts tomorrow
+- **Currently:** Configured autostart mailbox watcher (Windows Task Scheduler 1m repetition), installed global mesh skill, ratified system upgrade
 
 ---
 
@@ -30,7 +30,9 @@
 
 5. **Standing Mailbox Watcher & Protocol v2 Cadence:**
    - Persistent global skill `mailbox-watch` located at `C:\Users\sehaj\.gemini\config\skills\mailbox-watch\SKILL.md`.
-   - **Phase 1 (Active):** Script-first watcher (`scripts/check-mailbox.ps1`) executing curl/REST queries against `Sehajuppal/agent-relay` Issue #1, persisting high-water mark at `~/.gemini/agent-relay-state.json`. Zero LLM token cost during idle polling. Polled on session start and ~5-minute cadence while active.
+   - **Autostart Runtime:** Windows Task Scheduler (`AntigravityMailboxWatch`), executing `watch-runner.ps1` silently (`-WindowStyle Hidden`) at user logon, repeating every 1 minute (`PT1M`) indefinitely.
+   - **Presence Protocol:** Automated detection of new system boot posting `STATUS: online` with cadence to Issue #1. Emits `STATUS: offline` when going dark.
+   - **Phase 1 (Active):** Script-first watcher (`scripts/check-mailbox.ps1`) executing curl/REST queries against `Sehajuppal/agent-relay` Issue #1, persisting high-water mark at `~/.gemini/agent-relay-state.json`. Zero LLM token cost during idle polling.
    - **Phase 2 (Planned):** Webhook-triggered wakes via GitHub Actions (with 5-minute polling fallback).
    - **Envelope v2:** Full support for `ID: <uuid>`, `TS: <timestamp>`, `ATTEMPT: <n>`, `LEASE-UNTIL: <timestamp>`, and task lifecycle states (`new-task`, `ack`, `claim`, `working`, `input-required`, `result`, `done`, `failed`, `canceled`, `error`, `heartbeat`, `digest`, `dead-letter`).
 
@@ -57,6 +59,9 @@
 - Synchronized `pipelines/omni-realism` with current factory agent specifications, passing all validation checks.
 - Published [`Sehajuppal/pipeline-factory`](https://github.com/Sehajuppal/pipeline-factory) as a private, secret-free repository per Sehaj's approval (`RE: pipeline-publish`).
 - Ratified inter-agent comms agreement with Marlowe (`RE: comms-upgrade`): typed briefs, priority signaling, fast claiming, and offline status handling.
+- Installed canonical global `mesh` skill (`C:\Users\sehaj\.gemini\config\skills\mesh\SKILL.md`) with 4-agent active roster and parked spark note (`RE: mesh-skill-install`).
+- Configured Windows Task Scheduler autostart (`AntigravityMailboxWatch`) with 1m repetition, silent logging to `mailbox-watch.log`, and automated boot presence posting (`RE: autostart-mailbox`).
+- Ratified 3 mesh system upgrade proposals: presence protocol, direct peer communication with Groks on Issue #2, and required `next-focus` in completion reports (`RE: system-upgrade`).
 
 ---
 

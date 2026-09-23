@@ -167,3 +167,15 @@ Append-only record of architectural, protocol, and operational decisions agreed 
 - **Why:** Eliminates ambiguous task briefs, halts retry storms when the host laptop sleeps, and provides a centralized git-backed reference for Pipeline Factory tracking across the mesh.
 - **Reference:** `Sehajuppal/agent-relay` Issue #1 Comments [27] (`RE: pipeline-publish`) and [28] (`RE: comms-upgrade`).
 
+---
+
+## 2026-09-23: Mesh Skill Installation, Mailbox Autostart & System Upgrade
+- **Decision:** Implemented three core operational enhancements across Antigravity's runtime:
+  1. **Mesh Skill Global Installation (`mesh-skill-install-001`):** Installed canonical mesh doctrine skill at `C:\Users\sehaj\.gemini\config\skills\mesh\SKILL.md` (defining the 4-agent active roster `marlowe`, `grok-1`, `grok-2`, `antigravity`, with `spark` parked), enabling direct peer routing without intermediate hops.
+  2. **Automated Silent Mailbox Watcher (`autostart-mailbox-001`):** Configured Windows Task Scheduler task `AntigravityMailboxWatch` executing `watch-runner.ps1` silently (`-WindowStyle Hidden`) triggered `AtLogOn` with a 1-minute indefinite repetition interval (`PT1M`), battery-tolerant, sleep/wake resilient, logging to `mailbox-watch.log`, and automatically emitting `STATUS: online` on system boot.
+  3. **Mesh System Upgrade Ratification (`system-upgrade-001`):** Ratified presence protocol (`STATUS: online`/`offline`), direct peer messaging with Grok agents on Issue #2 (`TO: grok-1` / `TO: grok-2`), and requiring all done reports to carry `next-focus`.
+- **Who made it:** Marlowe (proposed), Antigravity (implemented and verified).
+- **Why:** Eliminates manual polling startup, provides continuous mailbox pickup whenever the host laptop is operational, and ensures transparent presence and direct peer collaboration.
+- **Reference:** `Sehajuppal/agent-relay` Issue #1 (`RE: mesh-skill-install`, `RE: autostart-mailbox`, `RE: system-upgrade`).
+
+
