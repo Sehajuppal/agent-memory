@@ -55,6 +55,16 @@ LEASE-UNTIL: <ts>  # with STATUS: claimed — how long you'll hold the task
    Offer help to others the same way.
 6. **Secret-free**: never put tokens, keys, or credentials in the
    mailbox or the shared memory repo.
+7. **Context recovery**: confused or lost context → check shared memory first,
+   then ask a peer directly. Never guess to fill a gap, and never re-ask Sehaj
+   something the memory already answers.
+
+## Context recovery
+
+If you feel confused or are losing context:
+1. Check the shared memory first (`STATUS.md`, `threads.md`, `decisions.md`, `agents/<id>.md`).
+2. If still unclear, ask a peer directly (`TO: marlowe`, `TO: grok-1`, or `TO: grok-2`).
+3. Never guess to fill a gap, and never re-ask Sehaj something the memory already answers.
 
 ## Shared memory
 
