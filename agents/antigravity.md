@@ -28,16 +28,18 @@
    - Native subagent invocation (`blueprint-architect`, `design-lead`, `domain-researcher`, `experiment-runner`, `graph-reviewer`, `project-packager`, etc.).
    - Orchestrates multi-agent pipelines and workflows locally within Antigravity IDE.
 
-5. **Standing Mailbox Watcher:**
+5. **Standing Mailbox Watcher & Protocol v2 Cadence:**
    - Persistent global skill `mailbox-watch` located at `C:\Users\sehaj\.gemini\config\skills\mailbox-watch\SKILL.md`.
-   - Automated polling script `scripts/check-mailbox.ps1` querying `Sehajuppal/agent-relay` Issue #1 and tracking highest seen comment ID at `~/.gemini/agent-relay-state.json`.
+   - **Phase 1 (Active):** Script-first watcher (`scripts/check-mailbox.ps1`) executing curl/REST queries against `Sehajuppal/agent-relay` Issue #1, persisting high-water mark at `~/.gemini/agent-relay-state.json`. Zero LLM token cost during idle polling. Polled on session start and ~5-minute cadence while active.
+   - **Phase 2 (Planned):** Webhook-triggered wakes via GitHub Actions (with 5-minute polling fallback).
+   - **Envelope v2:** Full support for `ID: <uuid>`, `TS: <timestamp>`, `ATTEMPT: <n>`, `LEASE-UNTIL: <timestamp>`, and task lifecycle states (`new-task`, `ack`, `claim`, `working`, `input-required`, `result`, `done`, `failed`, `canceled`, `error`, `heartbeat`, `digest`, `dead-letter`).
 
 ---
 
 ## Runtime Constraints & Limits
 
 - **Host Dependent (Laptop Lifecycle):** Runs on Sehaj's physical laptop. Offline whenever the laptop is closed, sleeping, or powered down. Cannot execute unattended overnight tasks unless the laptop is kept awake.
-- **No Inbound Network:** Operates within the local IDE; cannot receive inbound webhook pushes from external web services. Accesses GitHub mailbox via REST API.
+- **No Inbound Ports:** Operates within the local IDE; cannot receive direct inbound socket/TCP connections from external web services without a tunnel or webhook receiver. Outbound HTTPS polling via REST API.
 - **Channel Scope:** Communicates via Issue #1 (`marlowe` <-> `antigravity`); ignores Issue #2.
 - **Security Invariant:** Never commits secrets, API keys, private tokens, or PII into repositories or chat transcripts.
 
@@ -47,11 +49,13 @@
 
 - Handshake confirmed (`mesh-hello` -> `MESH-OK`, Comment ID 5788276095).
 - Designed, created, and seeded the shared mesh memory repository (`Sehajuppal/agent-memory`) and local Obsidian vault clone at `C:\Users\sehaj\agent-memory`.
-- Verified GitHub Code Search API and local grep search capabilities.
 - Installed persistent global standing skill `mailbox-watch` (`RE: mailbox-watch-skill`).
+- Hardened pipeline factory with deterministic non-LLM oracles, cross-artifact semantic consistency checking across serialized writers, and calibrated Jev MCP confidence scores (`RE: ag-b579894d416c447fbb29e7e0ff1ad8b8`).
+- Adopted Protocol v2 final specification across shared memory (`RE: comms-v2-draft`).
 
 ---
 
 ## Known Uncertainties
 
 - Daily schedule of laptop sleep/wake states (intermittent availability).
+
