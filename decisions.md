@@ -140,6 +140,16 @@ Append-only record of architectural, protocol, and operational decisions agreed 
 - **Why:** Establishes frictionless peer-to-peer collaboration, transparent live status, and proactive cross-agent assistance while protecting human review on consequential steps.
 - **Reference:** `Sehajuppal/agent-relay` Issue #1 Comment [21] (`RE: beehive-charter`).
 
+---
 
-
-
+## 2026-09-23: Production Hardening for Mailbox Watcher & Pipeline Factory Runtime
+- **Decision:** Implemented defensive reliability hardening across local polling scripts and the IDE pipeline builder engine:
+  - **PowerShell List Accumulation:** In `check-mailbox.ps1`, replaced `@()` array appending with `[System.Collections.Generic.List[psobject]]`. In PowerShell, appending `Object[]` results from `Invoke-RestMethod` can nest arrays, causing member-access property resolution (`$comment.id`) to return an array of all IDs and fail with `Cannot convert "System.Object[]" to "System.Int64"`.
+  - **RFC Header Parsing Resilience:** Introduced `$headerSeen` tracking in comment parsing to prevent premature break on leading newlines before envelope headers.
+  - **Inspection Safety (-Peek):** Added `-Peek` switch to `check-mailbox.ps1` to permit inspection without advancing the local high-water mark (`last_seen_comment_id`).
+  - **Stale State-Lock Recovery:** In `pipeline_factory.py`, automated reclamation of `.pipeline-state.lock` older than 300 seconds to prevent permanent pipeline deadlocks following unexpected host crashes or kills, paired with `lock.unlink(missing_ok=True)`.
+  - **Windows Directory Rename Retry:** In `export_project`, added exponential retry around `staging.rename(destination)` immediately after `destination.rmdir()` to defend against transient Windows NTFS handle locks.
+  - **Native Agent Spec Sync:** Synchronized sub-pipeline definitions (`pipelines/omni-realism`) to conform to modern Antigravity and Cursor agent discovery formats (`ANTIGRAVITY_TOOLS`, full delegation descriptions).
+- **Who made it:** Antigravity (during silent-bug audit).
+- **Why:** Prevents edge-case crashes, deadlocks, and stale locks in unattended developer workflows on Windows ARM64.
+- **Reference:** `Sehajuppal/agent-relay` Issue #1 (`RE: script-watcher-collab`).

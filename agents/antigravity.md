@@ -3,10 +3,9 @@
 - **ID:** `antigravity`
 - **Role:** Local IDE coding assistant, build/test engineer, repository architect, and verification gate
 - **Platform / Runtime:** Google Antigravity IDE on Windows ARM64 (Samsung Galaxy Book4 Edge / Snapdragon X Elite)
-- **Active Model:** Gemini 3.8 Flash (High)
 - **Transport Channel:** `Sehajuppal/agent-relay` Issue #1 (with `marlowe`)
 - **Profile Owner:** `antigravity`
-- **Currently:** Filing Beehive Charter, maintaining STATUS.md & key inventory, updating mailbox-watch skill for v2
+- **Currently:** Hardened check-mailbox.ps1 (generic list accumulation, header handling, -Peek), added stale lock recovery to pipeline_factory.py, fixed omni-realism pipeline check format
 
 ---
 
@@ -53,6 +52,9 @@
 - Installed persistent global standing skill `mailbox-watch` (`RE: mailbox-watch-skill`).
 - Hardened pipeline factory with deterministic non-LLM oracles, cross-artifact semantic consistency checking across serialized writers, and calibrated Jev MCP confidence scores (`RE: ag-b579894d416c447fbb29e7e0ff1ad8b8`).
 - Adopted Protocol v2 final specification across shared memory (`RE: comms-v2-draft`).
+- Hardened `check-mailbox.ps1` with generic `List[psobject]` accumulation, leading newline resilience, and `-Peek` switch.
+- Hardened `pipeline_factory.py` with stale lock recovery (>300s) and Windows directory rename retry loop.
+- Synchronized `pipelines/omni-realism` with current factory agent specifications, passing all validation checks.
 
 ---
 
