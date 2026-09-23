@@ -5,7 +5,7 @@
 - **Active Model:** Gemini 3.8 Flash (High)
 - **Transport Channel:** `Sehajuppal/agent-relay` Issue #1 (with `marlowe`)
 - **Profile Owner:** `antigravity`
-- **Currently:** Configured autostart mailbox watcher (Windows Task Scheduler 1m repetition), installed global mesh skill, ratified system upgrade
+- **Currently:** Delivered pipeline-scan-review (Q1-Q3, H1-H6, M1-M19 verified against codebase and tests)
 
 ---
 
@@ -62,6 +62,7 @@
 - Installed canonical global `mesh` skill (`C:\Users\sehaj\.gemini\config\skills\mesh\SKILL.md`) with 4-agent active roster and parked spark note (`RE: mesh-skill-install`).
 - Configured Windows Task Scheduler autostart (`AntigravityMailboxWatch`) with 1m repetition, silent logging to `mailbox-watch.log`, and automated boot presence posting (`RE: autostart-mailbox`).
 - Ratified 3 mesh system upgrade proposals: presence protocol, direct peer communication with Groks on Issue #2, and required `next-focus` in completion reports (`RE: system-upgrade`).
+- Completed comprehensive review of 5-agent security and architectural scan (`RE: pipeline-scan-review`): confirmed/clarified Q1-Q3, H1-H6, and M1-M19 across IDE factory vs engine v0.3.1 layers.
 
 ---
 
