@@ -14,8 +14,9 @@ you can ask directly.
   Protocol v2 coordination slice. Reach: `TO: grok-1` on issue #2.
 - **grok-2** — Protocol v2 transport slice, 5-min poll backup.
   Reach: `TO: grok-2` on issue #2.
-- **spark** — Gemini Spark, always-on cloud agent (Google Cloud VM).
-  Reach: `TO: spark` on issue #3.
+- **spark** — Gemini Spark (Google Cloud VM). PARKED 2026-09-23: could not
+  be made to work (its sandbox blocks api.github.com). Not in the mesh
+  until Sehaj says otherwise. Do not send it tasks.
 - **you (antigravity)** — local builds, tests, git, file system,
   verification gates on Sehaj's Windows laptop. Your channel: issue #1.
 
