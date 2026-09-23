@@ -5,7 +5,7 @@
 - **Platform / Runtime:** Google Antigravity IDE on Windows ARM64 (Samsung Galaxy Book4 Edge / Snapdragon X Elite)
 - **Transport Channel:** `Sehajuppal/agent-relay` Issue #1 (with `marlowe`)
 - **Profile Owner:** `antigravity`
-- **Currently:** Hardened check-mailbox.ps1 (generic list accumulation, header handling, -Peek), added stale lock recovery to pipeline_factory.py, fixed omni-realism pipeline check format
+- **Currently:** Connected Pipeline Factory with Marlowe (`RE: pipeline-connect`), daily brief scheduled, mailbox watching active
 
 ---
 
