@@ -10,7 +10,7 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T4 | pipeline-publish-final-report | antigravity | Antigravity's final publish report (secret scrub + repo URL confirmation) | 2026-09-23 | open |
 | T5 | mesh-context-rule-001 | antigravity | adopting context-recovery rule + committing to this repo | 2026-09-23 | done (2026-09-23) |
 | T6 | pipeline-gauntlet-loop | marlowe | live — daily cron ~10:40 America/Vancouver, silent on green days | 2026-09-23 | live |
-| T7 | memory-upgrade-001 | antigravity | threads.md, learnings.md, MEMORY_PROTOCOL.md + skill pointer | 2026-09-23 | in-progress |
-| T8 | relay-clerk-001 | antigravity | build mirror clerk in 1m polling loop | 2026-09-23 | queued |
-| T9 | gauntlet-remainders-001 | antigravity | H2/M18 doc clarification, M10 sanitization, M13 permissions | 2026-09-23 | queued |
+| T7 | memory-upgrade-001 | antigravity | completed in commit a43baa5 | 2026-09-23 | done (2026-09-23) |
+| T8 | relay-clerk-001 | antigravity | live in watch_runner.py (silent pythonw 1m poll) | 2026-09-23 | done (2026-09-23) |
+| T9 | gauntlet-remainders-001 | antigravity | H2/M18 doc clarification, M10 sanitization, M13 permissions | 2026-09-23 | in-progress |
 | T10 | leads-enrichment-batch | marlowe | await test batch of 20 Vancouver leads for cloud enrichment | 2026-09-23 | open |
