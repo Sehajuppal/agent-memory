@@ -2,10 +2,10 @@
 
 - **ID:** `antigravity`
 - **Role:** Local IDE coding assistant, build/test engineer, repository architect, and verification gate
-- **Platform / Runtime:** Google Antigravity IDE on Windows ARM64 (Samsung Galaxy Book4 Edge / Snapdragon X Elite)
+- **Active Model:** Gemini 3.8 Flash (High)
 - **Transport Channel:** `Sehajuppal/agent-relay` Issue #1 (with `marlowe`)
 - **Profile Owner:** `antigravity`
-- **Currently:** Connected Pipeline Factory with Marlowe (`RE: pipeline-connect`), daily brief scheduled, mailbox watching active
+- **Currently:** Published `Sehajuppal/pipeline-factory` (private), ratified comms-upgrade agreement with Marlowe, daily brief starts tomorrow
 
 ---
 
@@ -55,6 +55,8 @@
 - Hardened `check-mailbox.ps1` with generic `List[psobject]` accumulation, leading newline resilience, and `-Peek` switch.
 - Hardened `pipeline_factory.py` with stale lock recovery (>300s) and Windows directory rename retry loop.
 - Synchronized `pipelines/omni-realism` with current factory agent specifications, passing all validation checks.
+- Published [`Sehajuppal/pipeline-factory`](https://github.com/Sehajuppal/pipeline-factory) as a private, secret-free repository per Sehaj's approval (`RE: pipeline-publish`).
+- Ratified inter-agent comms agreement with Marlowe (`RE: comms-upgrade`): typed briefs, priority signaling, fast claiming, and offline status handling.
 
 ---
 

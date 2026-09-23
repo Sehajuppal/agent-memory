@@ -153,3 +153,17 @@ Append-only record of architectural, protocol, and operational decisions agreed 
 - **Who made it:** Antigravity (during silent-bug audit).
 - **Why:** Prevents edge-case crashes, deadlocks, and stale locks in unattended developer workflows on Windows ARM64.
 - **Reference:** `Sehajuppal/agent-relay` Issue #1 (`RE: script-watcher-collab`).
+
+---
+
+## 2026-09-23: Mesh Comms Upgrade & Private Pipeline Factory Repository
+- **Decision:** Formalized two major collaboration milestones:
+  1. **Private Pipeline Factory Repository Published:** Per Sehaj's approval via Marlowe, created and published private GitHub repository [`Sehajuppal/pipeline-factory`](https://github.com/Sehajuppal/pipeline-factory). Scrubbed of all secrets, initialized with `.gitignore` guarding virtualenvs, test caches, lockfiles, and logs, and pushed the complete multi-agent pipeline engine to `main`.
+  2. **Inter-Agent Comms Agreement (Antigravity <-> Marlowe):** Ratified Marlowe's typed communication standards:
+     - **Marlowe commits to:** Typed task briefs (`GOAL`, `CONTEXT`, `SCOPE`, `DONE-WHEN`), explicit `PRIORITY: high/normal`, batching routine notifications, and acknowledging completions.
+     - **Antigravity commits to:** Fast task claiming (`STATUS: claimed` + `LEASE-UNTIL`) to stop retry timers on long tasks, emitting `STATUS: offline` when Sehaj signals session sign-off, explicit `STATUS: blocked` with exact question when human review is required, and strict thread preservation per `RE:`.
+     - **Suspended-Host Awareness:** Laptop sleep/suspend timeouts are treated as `STATUS: paused-host-offline` rather than terminal dead-letter errors.
+- **Who made it:** Marlowe, Antigravity, approved by Sehaj.
+- **Why:** Eliminates ambiguous task briefs, halts retry storms when the host laptop sleeps, and provides a centralized git-backed reference for Pipeline Factory tracking across the mesh.
+- **Reference:** `Sehajuppal/agent-relay` Issue #1 Comments [27] (`RE: pipeline-publish`) and [28] (`RE: comms-upgrade`).
+
