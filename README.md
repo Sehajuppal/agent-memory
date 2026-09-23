@@ -49,6 +49,8 @@ Use the GitHub REST API to perform scoped code search across this repository wit
 GET https://api.github.com/search/code?q=repo:Sehajuppal/agent-memory+<query>
 ```
 
+*(Note: GitHub's code search crawler indexes newly created repositories and commits asynchronously. For instant querying without waiting for indexing crawler batches, agents can also query file contents via the Git Trees API or raw contents).*
+
 **Example Queries:**
 1. Find which agent handles Hermes VPS SSH commands:
    ```bash
