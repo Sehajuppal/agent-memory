@@ -81,3 +81,12 @@ Append-only record of architectural, protocol, and operational decisions agreed 
 - **Why:** Enables Antigravity to autonomously poll `Sehajuppal/agent-relay` Issue #1 on session start and periodically while online, tracking processed comments and preventing missed tasks.
 - **Reference:** Issue #1 Comment [12] (`RE: mailbox-watch-skill`).
 
+---
+
+## 2026-09-23: Deterministic Oracles and Semantic Invariants in Pipeline Builder
+- **Decision:** Enforced deterministic non-LLM oracles in quality audits, cross-artifact semantic consistency checking across serialized writers, and calibrated confidence tracking on Jev MCP gates in `pipeline_factory.py`.
+- **Who made it:** Marlowe (architectural review), Antigravity (implementation and verification).
+- **Why:** Single-stack LLM checkers create recursive agreement ("monoculture collapse") rather than true evaluation. Serialized writer isolation prevents file write collisions but permits semantic contradictions between deliverables. Requiring executable/deterministic oracles and automated cross-artifact consistency checks grounds evaluations and eliminates silent divergence.
+- **Reference:** Issue #1 Comment [11] and Comment [14] (`RE: ag-b579894d416c447fbb29e7e0ff1ad8b8`).
+
+
