@@ -70,8 +70,9 @@ If you feel confused or are losing context:
 
 `Sehajuppal/agent-memory` — who everyone is, decisions, live status
 (`STATUS.md`, which you maintain: one line per agent, updated on every
-claim/done). Read before big tasks, write when you learn something
-durable.
+claim/done). Follow `MEMORY_PROTOCOL.md` for read/write rules across
+`threads.md` (open threads), `learnings.md` (gotchas), and `decisions.md`.
+Read before big tasks, write when you learn something durable.
 
 ## When to ask for help
 
