@@ -1,0 +1,74 @@
+# Decisions Log
+
+Append-only record of architectural, protocol, and operational decisions agreed upon across the mesh.
+
+**Rules for modifying this file:**
+1. All entries must follow the format: Date, Decision, Who made it, Why.
+2. Entries are strictly **append-only**. Never edit, reorder, or delete past entries.
+3. Every entry should cite the corresponding mailbox issue and thread ID (`RE:`) where the consensus was reached.
+
+---
+
+## 2026-09-23: Transport Mechanism via GitHub Issue Comments
+- **Decision:** Use asynchronous GitHub issue comments in `Sehajuppal/agent-relay` with RFC-style key-value envelope headers (`TO:`, `FROM:`, `RE:`, `STATUS:`) as the inter-agent transport layer.
+- **Who made it:** Marlowe, Sehaj.
+- **Why:** All mesh agents operate on disparate host environments (cloud container, Cursor instances, local ARM64 laptop) with no open inbound ports or static IPs. GitHub issues provide a neutral, authenticated, persistent, durable, and universally accessible message bus that requires only outbound HTTPS polling.
+- **Reference:** `Sehajuppal/agent-relay` Issue #1 body and Issue #2 body.
+
+---
+
+## 2026-09-23: Mesh Roster Definition & Mailbox Channel Split
+- **Decision:** Establish an initial mesh roster of four agents (`marlowe`, `grok-1`, `grok-2`, `antigravity`). Split traffic across two mailbox channels:
+  - Issue #1: `marlowe` <-> `antigravity`
+  - Issue #2: `marlowe` <-> `grok-1` / `grok-2`
+- **Who made it:** Marlowe, Sehaj.
+- **Why:** Prevents message noise and accidental double-handling between the local laptop development environment (`antigravity`) and the cloud bot assistants (`grok-1` and `grok-2`), while positioning `marlowe` as the cross-mesh coordinator.
+- **Reference:** Issue #1 Comment [4] and Issue #2 Comments [4], [5].
+
+---
+
+## 2026-09-23: Hermes VPS Operational Authority Centralized to Marlowe
+- **Decision:** Centralize all Hermes VPS SSH operations strictly to `marlowe`. `grok-1` explicitly amended its capability manifest to strike direct SSH access; both Grok agents must delegate Hermes tasks to Marlowe using `TO: marlowe` / `RE: hermes-<topic>` / `STATUS: new-task`.
+- **Who made it:** Grok-1, Marlowe.
+- **Why:** Distributing SSH keys or credentials across multiple bot environments introduces high security risk. Centralizing execution in Marlowe ensures a single point of operational accountability, clean audit trails, and avoidance of race conditions on the Hermes host.
+- **Reference:** Issue #2 Comment [3] and Comment [4].
+
+---
+
+## 2026-09-23: Polling Interval Floor for Grok Agents
+- **Decision:** The poll interval floor for `grok-1` and `grok-2` is fixed at ~5 minutes. The initial protocol expectation of 1-2 minute polling was formally rejected for the Grok runtimes.
+- **Who made it:** Grok-1, Grok-2, accepted by Marlowe.
+- **Why:** 5 minutes is the platform floor for reliable polling on the Grok Bot runtime.
+- **Reference:** Issue #2 Comments [1], [2], [4], [5].
+
+---
+
+## 2026-09-23: Overnight Task Allocation & Antigravity Stand-down
+- **Decision:** Antigravity was stood down from the overnight protocol research task (`comms-10x-antigravity`), and its brief was reassigned to `grok-1`.
+- **Who made it:** Marlowe, Sehaj.
+- **Why:** Antigravity runs on Sehaj's personal laptop, which is powered down / suspended overnight. Assigning overnight deadlines to a sleeping host causes pipeline blockage.
+- **Reference:** Issue #1 Comment [7] and Issue #2 Comment [8].
+
+---
+
+## 2026-09-23: Decoupling Shared Memory from Mailbox Transport
+- **Decision:** Create a dedicated public GitHub repository `Sehajuppal/agent-memory` to act as the shared persistent memory store, keeping the issue mailbox strictly as the ephemeral transport layer.
+- **Who made it:** Sehaj, Marlowe, Antigravity.
+- **Why:** Issue threads are prone to noise, lack structured search across historical topics, and suffer from pagination limits. A git-backed markdown repository provides full-text search (GitHub Code Search API and local ripgrep), Obsidian knowledge vault browsing, and distinct file ownership.
+- **Reference:** Issue #1 Comment [8] (`RE: memory-pipeline`).
+
+---
+
+## 2026-09-23: Concurrency-Safe File Architecture in Agent Memory
+- **Decision:** Agent profiles are partitioned into individual files (`agents/marlowe.md`, `agents/grok-1.md`, `agents/grok-2.md`, `agents/antigravity.md`), each edited exclusively by its owning agent.
+- **Who made it:** Antigravity (implementing the memory-pipeline specification).
+- **Why:** Autonomous agents committing to a single monolithic manifest file would experience frequent merge conflicts when updating status or capabilities simultaneously.
+- **Reference:** `Sehajuppal/agent-memory` repository structure.
+
+---
+
+## 2026-09-23: Protocol v2 Memory-Layer Implementation Policy
+- **Decision:** Established the memory repository structure immediately using the prompt specification and existing mailbox consensus, while Marlowe's consolidated Protocol v2 draft is pending publication.
+- **Who made it:** Antigravity (following Prompt Step 1 guidance).
+- **Why:** The memory-pipeline specification provided complete requirements for repository layout, agent files, append-only decisions, glossary, and search verification. Proceeding avoids blocking the mesh, and the memory layer can easily be updated by any agent when Protocol v2 is published.
+- **Reference:** Issue #1 Comment [8] Step 1.
