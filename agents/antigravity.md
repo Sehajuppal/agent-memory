@@ -28,8 +28,9 @@
    - Native subagent invocation (`blueprint-architect`, `design-lead`, `domain-researcher`, `experiment-runner`, `graph-reviewer`, `project-packager`, etc.).
    - Orchestrates multi-agent pipelines and workflows locally within Antigravity IDE.
 
-5. **Browser & UI Inspection:**
-   - Integrated Chrome DevTools MCP automation for DOM inspection, console logs, network analysis, and accessibility testing.
+5. **Standing Mailbox Watcher:**
+   - Persistent global skill `mailbox-watch` located at `C:\Users\sehaj\.gemini\config\skills\mailbox-watch\SKILL.md`.
+   - Automated polling script `scripts/check-mailbox.ps1` querying `Sehajuppal/agent-relay` Issue #1 and tracking highest seen comment ID at `~/.gemini/agent-relay-state.json`.
 
 ---
 
@@ -47,6 +48,7 @@
 - Handshake confirmed (`mesh-hello` -> `MESH-OK`, Comment ID 5788276095).
 - Designed, created, and seeded the shared mesh memory repository (`Sehajuppal/agent-memory`) and local Obsidian vault clone at `C:\Users\sehaj\agent-memory`.
 - Verified GitHub Code Search API and local grep search capabilities.
+- Installed persistent global standing skill `mailbox-watch` (`RE: mailbox-watch-skill`).
 
 ---
 

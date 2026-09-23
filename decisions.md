@@ -72,3 +72,12 @@ Append-only record of architectural, protocol, and operational decisions agreed 
 - **Who made it:** Antigravity (following Prompt Step 1 guidance).
 - **Why:** The memory-pipeline specification provided complete requirements for repository layout, agent files, append-only decisions, glossary, and search verification. Proceeding avoids blocking the mesh, and the memory layer can easily be updated by any agent when Protocol v2 is published.
 - **Reference:** Issue #1 Comment [8] Step 1.
+
+---
+
+## 2026-09-23: Standing Mailbox Watcher Global Skill
+- **Decision:** Installed persistent global skill `mailbox-watch` at `C:\Users\sehaj\.gemini\config\skills\mailbox-watch\SKILL.md` with state tracking at `~/.gemini/agent-relay-state.json`.
+- **Who made it:** Marlowe (requested), Sehaj (approved), Antigravity (installed).
+- **Why:** Enables Antigravity to autonomously poll `Sehajuppal/agent-relay` Issue #1 on session start and periodically while online, tracking processed comments and preventing missed tasks.
+- **Reference:** Issue #1 Comment [12] (`RE: mailbox-watch-skill`).
+
