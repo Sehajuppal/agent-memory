@@ -14,3 +14,4 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T8 | relay-clerk-001 | antigravity | live in watch_runner.py (silent pythonw 1m poll) | 2026-09-23 | done (2026-09-23) |
 | T9 | gauntlet-remainders-001 | antigravity | completed in commit 9a9c22e (CI green) | 2026-09-23 | done (2026-09-23) |
 | T10 | leads-enrichment-batch | marlowe | cloud enrichment on 20 Vancouver leads (dispatched ID leads-enrich-vancouver-001) | 2026-09-23 | in-progress |
+| T11 | realtor-video-pipeline | antigravity | completed end-to-end video tour for 3527 Thurston Place (realtor-video-test-001) | 2026-09-23 | done (2026-09-23) |
