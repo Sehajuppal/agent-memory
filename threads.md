@@ -19,5 +19,7 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T13 | leads-pixel-detect-001 | antigravity | completed — 9 sites scanned, output on Issue #1 | 2026-09-24 | done (2026-09-24) |
 | T14 | beehive-upgrade-001 | antigravity | completed — claim lanes, pickup CLI & heartbeat loop live | 2026-09-24 | done (2026-09-24) |
 | T15 | leads-receipt-restamp-001 | antigravity | completed — H9 receipts restamped in commit e7a3783 | 2026-09-24 | done (2026-09-24) |
-
-
+| T16 | local-wake-prompt-002 | antigravity | completed — Windows toast integrated & agy audited | 2026-09-25 | done (2026-09-25) |
+| T17 | character-sheet-method-001 | antigravity | completed — 3-panel 16:9 template & persona video usage | 2026-09-25 | done (2026-09-25) |
+| T18 | viral-pipeline-002 | antigravity | completed — repos cloned, 3 briefs built & committed | 2026-09-25 | done (2026-09-25) |
+| T19 | backlog-drain-002 | antigravity | completed — audit brief, cheapness contract, identity gate | 2026-09-25 | done (2026-09-25) |
