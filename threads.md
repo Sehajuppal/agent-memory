@@ -23,3 +23,6 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T17 | character-sheet-method-001 | antigravity | completed — 3-panel 16:9 template & persona video usage | 2026-09-25 | done (2026-09-25) |
 | T18 | viral-pipeline-002 | antigravity | completed — repos cloned, 3 briefs built & committed | 2026-09-25 | done (2026-09-25) |
 | T19 | backlog-drain-002 | antigravity | completed — audit brief, cheapness contract, identity gate | 2026-09-25 | done (2026-09-25) |
+| T20 | clerk-dedup-fix-001 | antigravity | completed — root cause fixed (priority NameError, idempotency check, pre-cycle directive read) | 2026-09-25 | done (2026-09-25) |
+| T21 | character-sheet-v2-revision-002 | antigravity | completed — v2 5-delta template, procedure, numbered QA gates, persona anchor | 2026-09-25 | done (2026-09-25) |
+
