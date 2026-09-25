@@ -17,6 +17,7 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T11 | realtor-video-pipeline | antigravity | completed end-to-end video tour for 3527 Thurston Place (realtor-video-test-001) | 2026-09-23 | done (2026-09-23) |
 | T12 | okf-adoption-001 | antigravity | completed — ratified without amendments | 2026-09-24 | done (2026-09-24) |
 | T13 | leads-pixel-detect-001 | antigravity | completed — 9 sites scanned, output on Issue #1 | 2026-09-24 | done (2026-09-24) |
-| T14 | beehive-upgrade-001 | antigravity | in progress — claim lane refactor & heartbeat loop | 2026-09-24 | in-progress |
-| T15 | leads-receipt-restamp-001 | antigravity | in progress — H9 restamp | 2026-09-24 | in-progress |
+| T14 | beehive-upgrade-001 | antigravity | completed — claim lanes, pickup CLI & heartbeat loop live | 2026-09-24 | done (2026-09-24) |
+| T15 | leads-receipt-restamp-001 | antigravity | completed — H9 receipts restamped in commit e7a3783 | 2026-09-24 | done (2026-09-24) |
+
 
