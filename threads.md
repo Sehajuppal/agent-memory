@@ -25,4 +25,6 @@ Shared ledger of everything unresolved across the 4-agent mesh. One row per thre
 | T19 | backlog-drain-002 | antigravity | completed — audit brief, cheapness contract, identity gate | 2026-09-25 | done (2026-09-25) |
 | T20 | clerk-dedup-fix-001 | antigravity | completed — root cause fixed (priority NameError, idempotency check, pre-cycle directive read) | 2026-09-25 | done (2026-09-25) |
 | T21 | character-sheet-v2-revision-002 | antigravity | completed — v2 5-delta template, procedure, numbered QA gates, persona anchor | 2026-09-25 | done (2026-09-25) |
+| T22 | persona-pipeline-gauntlet-001 | antigravity | Persona Studio gauntlet loop — Cycle 0 decomposition in progress | 2026-09-26 | in-progress |
+
 
